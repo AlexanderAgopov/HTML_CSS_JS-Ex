@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Student(id, firstName, lastName, javaScore, htmlScore,
+				cssScore) {
+			this.id = id;
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.javaScore = javaScore;
+			this.htmlScore = htmlScore;
+			this.cssScore = cssScore;
+			this.overallScore = function() {
+				return (this.javaScore + this.htmlScore + this.cssScore) / 3;
+			}
+			this.displayDetails = function() {
+				document.write("Student ID: " + this.id + "</br>");
+				document.write("First name: " + this.firstName + "</br>");
+				document.write("Last name: " + this.lastName + "</br>");
+				document.write("Overall score: " + this.overallScore()
+						+ "</br>");
+			}
+		}
+
+		var id = prompt("Fill the ID number:");
+		var firstName = prompt("Fill the first name:")
+		var lastName = prompt("Fill the last name:")
+		var javaScore = prompt("Fill the score achieved by the student in his/her Java studies:");
+		var htmlScore = prompt("Fill the score achieved by the student in his/her HTML studies:");
+		var cssScore = prompt("Fill the score achieved by the student in his/her CSS studies:");
+
+		var student = new Student(id, firstName, lastName, javaScore,
+				htmlScore, cssScore);
+		student.displayDetails();
+
+		var employee = {
+			first : "John",
+			last : "Doe",
+			department : "Accounts"
+		};
+		var details = "";
+		document.write("</br><b>Using for/in loop</b></br>");
+		for ( var x in employee) {
+			details = x + ": " + employee[x];
+			document.write(details + "</br>");
+		}
+	</script>
+</body>
+</html>

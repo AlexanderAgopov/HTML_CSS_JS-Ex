@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Exercise 001</title>
+<script type="text/javascript">
+	var a = "How are you?";
+	var names = [ "A.", "B.", "C." ];
+	names[3] = "D.";
+	names[4] = "E.";
+	var cities = new Array("Sofia", "Budapest", "Beograd");
+
+	alert("Hello!");
+
+	alert("Welcome, " + names[0]);
+	alert(a);
+	alert("Is it sunny in " + cities[0] + "?");
+
+	var firstNumber = 15;
+	var secondNumber = 10;
+	var additionResult = firstNumber + secondNumber;
+	var subtractionResult = firstNumber - secondNumber;
+	var multiplicationResult = firstNumber * secondNumber;
+	var divisionResult = firstNumber / secondNumber;
+
+	function add(num1, num2) {
+		return num1 + num2;
+	}
+
+	function subtract(num1, num2) {
+		return num1 - num2;
+	}
+
+	function multiply(num1, num2) {
+		return num1 * num2;
+	}
+
+	function divide(num1, num2) {
+		return num
+		1 / num2;
+	}
+
+	document.write("</br>" + add(12, 14) + "</br>");
+
+	document.write("The first number is: " + firstNumber
+			+ "</br>The second number is: " + secondNumber + "</br></br>");
+	document.write(firstNumber + " + " + secondNumber + " = " + additionResult
+			+ "</br>");
+	document.write(firstNumber + " - " + secondNumber + " = "
+			+ subtractionResult + "</br>");
+	document.write(firstNumber + " * " + secondNumber + " = "
+			+ multiplicationResult + "</br>");
+	document.write(firstNumber + " / " + secondNumber + " = " + divisionResult
+			+ "</br>");
+
+	for (i = 0; i < cities.length; i++) {
+		document.write(cities[i] + "</br>");
+	}
+	var j = 0;
+	while (j < names.length) {
+		document.write(names[j] + "</br>");
+		j++;
+	}
+
+	var h = 0;
+	do {
+		document.write(cities[h]);
+		h++;
+	} while (h < cities.length)
+
+	if (firstNumber > secondNumber) {
+		document.write("</br></br> If statement test")
+	}
+
+	var age = prompt("Please enter your age");
+	if (age >= 18) {
+		document.write("</br>You are an adult.</br>");
+	} else {
+		document.write("</br>You are a child.</br>");
+	}
+
+	var hour = new Date().getHours();
+	if (hour < 12) {
+		document.write("</br></br>Good morning!");
+	} else {
+		document.write("</br></br>Good afternoon!</br></br>");
+	}
+
+	function writeAllNames(arrNames) {
+		for (var a = 0; a < arrNames.length; a++) {
+			document.write(names[a] + " ")
+		}
+	}
+
+	writeAllNames(names);
+
+	//create a cookie and set its expiration moment
+	//document.cookie = "cookiename=cookievalue; max-age=86400;path=/;"
+
+	//delete a cookie
+	//document.cookie = "cookiename=cookie2 ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+
+	function createCookie(cookieName, cookieValue, daysToExpire) {
+		var date = new Date();
+		date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+		document.cookie = cookieName + "=" + cookieValue + "; expires="
+				+ date.toGMTString();
+	}
+	function accessCookie(cookieName) {
+		var name = cookieName + "=";
+		var allCookieArray = document.cookie.split(';');
+		for (var i = 0; i < allCookieArray.length; i++) {
+			var temp = allCookieArray[i].trim();
+			if (temp.indexOf(name) == 0)
+				return temp.substring(name.length, temp.length);
+		}
+		return "";
+	}
+	function checkCookie() {
+		var user = accessCookie("testCookie");
+		if (user != "")
+			alert("Welcome Back " + user + "!!!");
+		else {
+			user = prompt("Please enter your name");
+			num = prompt("How many days you want to store your name on your computer?");
+			if (user != "" && user != null) {
+				createCookie("testCookie", user, num);
+			}
+		}
+	}
+
+	checkCookie();
+</script>
+</head>
+<body>
+
+</body>
+</html>

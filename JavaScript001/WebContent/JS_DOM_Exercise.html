@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<h1 id="h001">Welcome!!!</h1>
+	<p>Welcome everyone!</p>
+	<h2>1984</h2>
+	<p id="bool">War is Peace. Freedom is Slavery. Ignorance is
+		Strength.</p>
+	<input type="button" id="btn001" value="Click here">
+	<script type="text/javascript">
+		var heading001 = document.getElementById("h001").innerHTML;
+		alert(heading001);
+		var text = document.getElementById("bool").innerHTML
+		alert("True or False? " + text);
+		var answer = prompt("Please type '1' if the answer to the previous question is \"True\" or '0' if you think that it is \"False\"");
+		if (answer == 1) {
+			document.write("YOU ANSWERED: \"TRUE\".");
+		} else {
+			if (answer == 0) {
+				document.write("YOU ANSWERED: \"FALSE\".");
+			} else {
+				document.write("YOU DIDN'T ANSWER THE QUESTION.");
+			}
+		}
+		var paragraphs = document.getElementsByTagName("p"); //returns an array containing all such elements
+		document.write("</br></br>There are " + paragraphs.length
+				+ " parapgraphs in this document.</br></br>");
+
+		document.getElementById("btn001").addEventListener("click", showResult);
+		function showResult() {
+			alert("You clicked the button!");
+		}
+	</script>
+
+
+</body>
+</html>
